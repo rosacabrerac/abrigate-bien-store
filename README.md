@@ -31,17 +31,16 @@ If you want to clone and explore the code:
 
    ```bash
    git clone https://github.com/rosacabrerac/abrigate-bien-store.git
-
    ```
 
 2. Install dependencies:
 
    ```bash
-  npm install
+   npm install
    ```
 
 3. Start the development server:
 
    ```bash
-  npm run dev
+   npm run dev
    ```
