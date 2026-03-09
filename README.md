@@ -1,46 +1,47 @@
-# Astro Starter Kit: Basics
+# Abrígate Bien Store 🥶➡️🧥
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is a modern e-commerce storefront for selling thermal clothing, built with performance and user experience in mind.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Tech Stack
 
-## 🚀 Project Structure
+- **Framework:** [Astro](https://astro.build/) - Selected for its zero-JS default and blazing fast performance, ideal for e-commerce SEO.
+- **UI Components:** [React](https://react.dev/) - Integrated using Astro Islands purely where interactivity is needed (e.g., shopping cart, dynamic filters).
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) - For rapid, responsive, and consistent UI design.
 
-Inside of your Astro project, you'll see the following folders and files:
+## ✨ Features (Planned/Implemented)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+- [ ] Product Catalog with categories
+- [ ] Interactive Shopping Cart (React)
+- [ ] Responsive Design (Mobile First)
+- [ ] High-performance load times (Astro SSG/SSR)
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🛠️ Project Structure
 
-## 🧞 Commands
+(Explica brevemente cómo organizaste tus carpetas, por ejemplo:)
 
-All commands are run from the root of the project, from a terminal:
+- `src/components`: React & Astro reusable UI elements.
+- `src/pages`: Routing and main views.
+- `src/layouts`: Shared structural elements.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🏃‍♀️ How to run locally
 
-## 👀 Want to learn more?
+If you want to clone and explore the code:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/rosacabrerac/abrigate-bien-store.git
+
+   ```
+
+2. Install dependencies:
+
+   ```bash
+  npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+  npm run dev
+   ```
