@@ -17,8 +17,6 @@ This is a modern e-commerce storefront for selling thermal clothing, built with 
 
 ## 🛠️ Project Structure
 
-(Explica brevemente cómo organizaste tus carpetas, por ejemplo:)
-
 - `src/components`: React & Astro reusable UI elements.
 - `src/pages`: Routing and main views.
 - `src/layouts`: Shared structural elements.
