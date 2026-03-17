@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 
 interface Props {
@@ -19,9 +20,12 @@ const { title = "Abrigate Bien Store 🔥" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     <Navbar />
-    <slot />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
 
