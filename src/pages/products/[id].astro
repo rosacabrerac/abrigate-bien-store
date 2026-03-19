@@ -15,7 +15,9 @@ export async function getStaticPaths() {
 
 <Layout title={product?.name}>
   <section>
+    <a href="/">Volver al catálogo</a>
     <h1>{product?.name}</h1>
+    <span>${product?.price}</span>
     <img src={product?.image} alt={product?.name} />
     <p>{product?.description}</p>
   </section>

@@ -17,5 +17,9 @@ const { name, price, image, description, id } = Astro.props;
   <h2 class="font-bold">{name}</h2>
   <p class="font-semibold text-neutral-900">${price}</p>
   <p>{description}</p>
-  <a href={`/products/${id}`}>Detalles</a>
+  <a
+    href={`/products/${id}`}
+    class="inline-block bg-blue-600 text-white rounded px-4 py-2 mt-2"
+    >Detalles</a
+  >
 </article>
