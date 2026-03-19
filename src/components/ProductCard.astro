@@ -3,15 +3,17 @@ interface Props {
   name: string;
   price: number;
   image: string;
+  description: string;
 }
 
-const { name, price, image } = Astro.props;
+const { name, price, image, description } = Astro.props;
 ---
 
 <article
   class="border border-white/10 bg-blue-900/40 hover:shadow-lg shadow-sm rounded-md p-3 overflow-hidden"
 >
+  <img src={image} alt={name} class="aspect-square object-cover" />
   <h2 class="font-bold">{name}</h2>
   <p class="font-semibold text-neutral-900">${price}</p>
-  <img src={image} alt={name} class="aspect-square object-cover" />
+  <p>{description}</p>
 </article>
