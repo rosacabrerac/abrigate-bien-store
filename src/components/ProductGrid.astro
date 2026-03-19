@@ -1,0 +1,38 @@
+---
+import ProductCard from "./ProductCard.astro";
+
+const products = [
+  {
+    name: "Buzo Térmico de Primera Piel",
+    price: 1850,
+    image: "/images/buzo-termico.jpg",
+  },
+  {
+    name: "Chaleco Aislante Performance",
+    price: 1450,
+    image: "/images/chaleco-termico.jpg",
+  },
+  {
+    name: "Campera de Expedición Ártica",
+    price: 4900,
+    image: "/images/campera-termica.jpg",
+  },
+  {
+    name: "Calza Térmica de Compresión",
+    price: 1200,
+    image: "/images/calza-termica.jpg",
+  },
+];
+---
+
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {
+    products.map((product) => (
+      <ProductCard
+        name={product.name}
+        price={product.price}
+        image={product.image}
+      />
+    ))
+  }
+</section>
