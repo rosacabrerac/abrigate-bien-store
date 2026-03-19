@@ -8,8 +8,10 @@ interface Props {
 const { name, price, image } = Astro.props;
 ---
 
-<article class="border rounded-md p-3">
+<article
+  class="border border-white/10 bg-blue-900/40 hover:shadow-lg shadow-sm rounded-md p-3 overflow-hidden"
+>
   <h2 class="font-bold">{name}</h2>
-  <p>${price}</p>
-  <img src={image} alt={name} class="aspect-square" />
+  <p class="font-semibold text-neutral-900">${price}</p>
+  <img src={image} alt={name} class="aspect-square object-cover" />
 </article>
