@@ -1,6 +1,4 @@
 ---
-import ProductGrid from "./ProductGrid.astro";
-
 interface Props {
   name: string;
   price: number;
@@ -10,8 +8,8 @@ interface Props {
 const { name, price, image } = Astro.props;
 ---
 
-<article>
-  <h2>{name}</h2>
+<article class="border rounded-md p-3">
+  <h2 class="font-bold">{name}</h2>
   <p>${price}</p>
-  <img src={image} alt={name} />
+  <img src={image} alt={name} class="aspect-square" />
 </article>
