@@ -1,32 +1,6 @@
 ---
+import { products } from "../data/products.ts";
 import ProductCard from "./ProductCard.astro";
-
-const products = [
-  {
-    name: "Buzo Térmico de Primera Piel",
-    price: 1850,
-    image:
-      "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    name: "Chaleco Aislante Performance",
-    price: 1450,
-    image:
-      "https://images.unsplash.com/photo-1761426230485-ce314616691b?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    name: "Campera de Expedición Ártica",
-    price: 4900,
-    image:
-      "https://images.unsplash.com/photo-1773240306707-2a07fc569fde?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    name: "Calza Térmica de Compresión",
-    price: 1200,
-    image:
-      "https://images.unsplash.com/photo-1540054015980-0a70a82d5fb6?auto=format&fit=crop&q=80&w=800",
-  },
-];
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -36,6 +10,8 @@ const products = [
         name={product.name}
         price={product.price}
         image={product.image}
+        description={product.description}
+        id={product.id}
       />
     ))
   }
