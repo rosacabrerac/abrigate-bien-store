@@ -33,9 +33,76 @@ export async function getStaticPaths() {
   <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <img src={product?.image} alt={product?.name} />
     <div>
-      <h1>{product?.name}</h1>
+      <h1 class="text-2xl font-bold text-blue-400">{product?.name}</h1>
       <span>${product?.price}</span>
-      <p class="text-2xl font-bold text-blue-400">{product?.description}</p>
+      <div>
+        <h2>Color:</h2>
+        <p>Color dinámico</p>
+        <span>Color 1</span>
+        <span>Color 2</span>
+      </div>
+      <div>
+        <h2>Seleccioná tu Talle:</h2>
+        <div class="flex gap-2 p-2">
+          <label class="cursor-pointer">
+            <input
+              type="radio"
+              name="size"
+              id="size-s"
+              value="s"
+              class="sr-only peer"
+            />
+            <span
+              class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
+              >S
+            </span>
+          </label>
+
+          <label class="cursor-pointer">
+            <input
+              type="radio"
+              name="size"
+              id="size-m"
+              value="m"
+              class="sr-only peer"
+            />
+            <span
+              class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
+              >M</span
+            >
+          </label>
+          <label class="cursor-pointer">
+            <input
+              type="radio"
+              name="size"
+              id="size-l"
+              value="l"
+              class="sr-only peer"
+            />
+            <span
+              class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
+              >L</span
+            >
+          </label>
+
+          <label class="cursor-pointer">
+            <input
+              type="radio"
+              name="size"
+              id="size-xl"
+              value="xl"
+              class="sr-only peer"
+            />
+            <span
+              class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
+              >XL</span
+            ></label
+          >
+        </div>
+        <p>(?) Ver Guía de Talles</p>
+      </div>
+      <p>{product?.description}</p>
+      <button type="button">Agregar al Carrito</button>
     </div>
   </section>
 </Layout>
