@@ -38,71 +38,108 @@ export async function getStaticPaths() {
       <div>
         <h2>Color:</h2>
         <p>Color dinámico</p>
-        <span>Color 1</span>
-        <span>Color 2</span>
-      </div>
-      <div>
-        <h2>Seleccioná tu Talle:</h2>
-        <div class="flex gap-2 p-2">
+        <div class="flex gap-3 py-2">
           <label class="cursor-pointer">
             <input
               type="radio"
-              name="size"
-              id="size-s"
-              value="s"
+              name="color"
+              value="slate"
               class="sr-only peer"
+              checked
             />
             <span
-              class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
-              >S
-            </span>
-          </label>
-
-          <label class="cursor-pointer">
-            <input
-              type="radio"
-              name="size"
-              id="size-m"
-              value="m"
-              class="sr-only peer"
-            />
-            <span
-              class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
-              >M</span
-            >
+              class="w-6 h-6 inline-block rounded-full bg-slate-400 peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-400"
+              aria-label="Color Gris"></span>
           </label>
           <label class="cursor-pointer">
             <input
               type="radio"
-              name="size"
-              id="size-l"
-              value="l"
+              name="color"
+              value="blue"
               class="sr-only peer"
             />
             <span
-              class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
-              >L</span
-            >
+              class="w-6 h-6 inline-block rounded-full bg-blue-400 peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-400"
+              aria-label="Color Azul"></span>
           </label>
-
           <label class="cursor-pointer">
             <input
               type="radio"
-              name="size"
-              id="size-xl"
-              value="xl"
+              name="color"
+              value="black"
               class="sr-only peer"
             />
             <span
-              class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
-              >XL</span
-            ></label
-          >
+              class="w-6 h-6 inline-block rounded-full bg-black peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-400"
+              aria-label="Color Negro"></span>
+          </label>
         </div>
-        <p>(?) Ver Guía de Talles</p>
+        <div>
+          <h2>Seleccioná tu Talle:</h2>
+          <div class="flex gap-2 py-2">
+            <label class="cursor-pointer">
+              <input
+                type="radio"
+                name="size"
+                id="size-s"
+                value="s"
+                class="sr-only peer"
+                checked
+              />
+              <span
+                class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
+                >S
+              </span>
+            </label>
+            <label class="cursor-pointer">
+              <input
+                type="radio"
+                name="size"
+                id="size-m"
+                value="m"
+                class="sr-only peer"
+              />
+              <span
+                class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
+                >M</span
+              >
+            </label>
+            <label class="cursor-pointer">
+              <input
+                type="radio"
+                name="size"
+                id="size-l"
+                value="l"
+                class="sr-only peer"
+              />
+              <span
+                class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
+                >L</span
+              >
+            </label>
+            <label class="cursor-pointer">
+              <input
+                type="radio"
+                name="size"
+                id="size-xl"
+                value="xl"
+                class="sr-only peer"
+              />
+              <span
+                class="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors"
+                >XL</span
+              >
+            </label>
+          </div>
+          <p class="underline py-2">(?) Ver Guía de Talles</p>
+        </div>
+        <p>{product?.description}</p>
+        <button
+          type="button"
+          class="cursor-pointer bg-orange-400 p-2 my-2 rounded-lg w-70 text-slate-800 font-bold"
+          >Agregar al Carrito</button
+        >
       </div>
-      <p>{product?.description}</p>
-      <button type="button">Agregar al Carrito</button>
     </div>
   </section>
 </Layout>
