@@ -1,10 +1,15 @@
 ---
+import { STORE_PHONE } from "../../constants";
 import { products } from "../../data/products";
 import Layout from "../../layouts/Layout.astro";
 
 const { id } = Astro.params;
 
 const product = products.find((prod) => prod.id.toString() === id);
+
+const wppMessage = `Hola! Me interesa comprar ${product?.name}`;
+const encodedWppMessage = encodeURIComponent(wppMessage);
+const wppUrl = `https://wa.me/${STORE_PHONE}?text=${encodedWppMessage}`;
 
 export async function getStaticPaths() {
   return products.map((product) => ({
@@ -134,10 +139,12 @@ export async function getStaticPaths() {
           <p class="underline py-2">(?) Ver Guía de Talles</p>
         </div>
         <p>{product?.description}</p>
-        <button
-          type="button"
-          class="cursor-pointer bg-orange-400 p-2 my-2 rounded-lg w-70 text-slate-800 font-bold"
-          >Agregar al Carrito</button
+        <a
+          href={wppUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block text-center cursor-pointer bg-orange-400 p-2 my-2 rounded-lg w-70 text-slate-800 font-bold"
+          >Agregar al Carrito</a
         >
       </div>
     </div>
