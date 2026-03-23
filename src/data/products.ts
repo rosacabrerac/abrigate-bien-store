@@ -35,6 +35,15 @@ export const rawProducts = [
   },
 ];
 
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+  slug: string;
+}
+
 export const products = rawProducts.map((product) => ({
   ...product,
   slug: slugify(product.name),
