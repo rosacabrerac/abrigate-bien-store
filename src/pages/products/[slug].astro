@@ -3,9 +3,9 @@ import { STORE_PHONE } from "../../constants";
 import { products } from "../../data/products";
 import Layout from "../../layouts/Layout.astro";
 
-const { id } = Astro.params;
+const { slug } = Astro.params;
 
-const product = products.find((prod) => prod.id.toString() === id);
+const product = products.find((prod) => prod.slug === slug);
 
 const wppMessage = `Hola! Me interesa comprar ${product?.name}`;
 const encodedWppMessage = encodeURIComponent(wppMessage);
@@ -13,7 +13,7 @@ const wppUrl = `https://wa.me/${STORE_PHONE}?text=${encodedWppMessage}`;
 
 export async function getStaticPaths() {
   return products.map((product) => ({
-    params: { id: product.id.toString() },
+    params: { slug: product.slug },
   }));
 }
 ---
