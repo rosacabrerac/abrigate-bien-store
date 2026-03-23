@@ -5,9 +5,10 @@ interface Props {
   image: string;
   description: string;
   id: number;
+  slug: string;
 }
 
-const { name, price, image, description, id } = Astro.props;
+const { name, price, image, description, id, slug } = Astro.props;
 ---
 
 <article
@@ -18,7 +19,7 @@ const { name, price, image, description, id } = Astro.props;
   <p class="font-semibold text-neutral-900">${price}</p>
   <p>{description}</p>
   <a
-    href={`/products/${id}`}
+    href={`/products/${slug}`}
     class="inline-block bg-blue-600 text-white rounded px-4 py-2 mt-2"
     >Detalles</a
   >

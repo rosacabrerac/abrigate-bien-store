@@ -1,4 +1,6 @@
-export const products = [
+import { slugify } from "../utils/slugify";
+
+export const rawProducts = [
   {
     id: 0,
     name: "Buzo Térmico de Primera Piel",
@@ -32,3 +34,8 @@ export const products = [
       "https://images.unsplash.com/photo-1540054015980-0a70a82d5fb6?auto=format&fit=crop&q=80&w=800",
   },
 ];
+
+export const products = rawProducts.map((product) => ({
+  ...product,
+  slug: slugify(product.name),
+}));
