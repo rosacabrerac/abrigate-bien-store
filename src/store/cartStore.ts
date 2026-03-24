@@ -36,3 +36,14 @@ export function addItemsToCart(item: CartItem) {
     });
   }
 }
+
+export function getWhatsAppUrl() {
+  const items = Object.values(cartItems.get());
+
+  const wppText = items
+    .map(
+      (item) =>
+        `- ${item.quantity} ${item.name} ${item.color} (Talle: ${item.size}) $${item.price}`,
+    )
+    .join("\n");
+}
