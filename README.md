@@ -2,10 +2,12 @@
 
 <div align="center">
   
-![Astro](https://img.shields.io/badge/Astro-0C1120?style=for-the-badge&logo=astro&logoColor=white)
-![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Astro](https://img.shields.io/badge/Astro-0C1120?style=plastic&logo=astro&logoColor=white)
+![React](https://img.shields.io/badge/React-20232a?style=plastic&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=plastic&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=plastic&logo=javascript&logoColor=black)
+![GitHub last commit](https://img.shields.io/github/last-commit/rosacabrerac/abrigate-bien-store?style=plastic)
+
 
 </div>
 
