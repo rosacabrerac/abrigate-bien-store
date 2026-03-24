@@ -1,4 +1,4 @@
-import { map } from "nanostores";
+import { persistentAtom } from "@nanostores/persistent";
 
 export type CartItem = {
   id: string;
@@ -10,7 +10,14 @@ export type CartItem = {
   quantity: number;
 };
 
-export const cartItems = map<Record<string, CartItem>>({});
+export const cartItems = persistentAtom<Record<string, CartItem>>(
+  "cart",
+  {},
+  {
+    encode: JSON.stringify,
+    decode: JSON.parse,
+  },
+);
 
 export function addItemsToCart(item: CartItem) {
   const cartItemId = `${item.id}-${item.size}-${item.color}`;
@@ -18,14 +25,14 @@ export function addItemsToCart(item: CartItem) {
   const existingItem = cartItems.get()[cartItemId];
 
   if (existingItem) {
-    cartItems.setKey(cartItemId, {
-      ...existingItem,
-      quantity: existingItem.quantity + 1,
+    cartItems.set({
+      ...cartItems.get(),
+      [cartItemId]: { ...existingItem, quantity: existingItem.quantity + 1 },
     });
   } else {
-    cartItems.setKey(cartItemId, {
-      ...item,
-      quantity: 1,
+    cartItems.set({
+      ...cartItems.get(),
+      [cartItemId]: { ...item, quantity: 1 },
     });
   }
 }
