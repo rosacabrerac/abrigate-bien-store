@@ -1,4 +1,4 @@
-name: Lint Check
+name: Build & CI
 
 on:
   pull_request:
@@ -37,3 +37,6 @@ jobs:
 
       - name: 🔍 Type Check Astro/React
         run: pnpm run check
+
+      - name: 🏗️ Build Abrígate Bien Store
+        run: pnpm run build
