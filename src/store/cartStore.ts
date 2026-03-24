@@ -28,4 +28,4 @@ export function addItemsToCart(item: CartItem) {
       quantity: 1,
     });
   }
-};
+}
