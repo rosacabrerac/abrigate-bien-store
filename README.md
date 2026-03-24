@@ -7,7 +7,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=plastic&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=plastic&logo=javascript&logoColor=black)
 ![GitHub last commit](https://img.shields.io/github/last-commit/rosacabrerac/abrigate-bien-store?style=plastic)
-
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/rosacabrerac/abrigate-bien-store/build.yml?style=plastic)
 
 </div>
 
