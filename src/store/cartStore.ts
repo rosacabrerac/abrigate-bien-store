@@ -65,3 +65,7 @@ export const isCartOpen = atom(false);
 export function toggleCart() {
   isCartOpen.set(!isCartOpen.get());
 }
+
+export function clearCart() {
+  cartItems.set({});
+}
