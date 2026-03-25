@@ -1,4 +1,6 @@
 import { persistentAtom } from "@nanostores/persistent";
+import { atom } from "nanostores";
+import { STORE_PHONE } from "../constants";
 
 export type CartItem = {
   id: string;
@@ -46,4 +48,20 @@ export function getWhatsAppUrl() {
         `- ${item.quantity} ${item.name} ${item.color} (Talle: ${item.size}) $${item.price}`,
     )
     .join("\n");
+
+  const totalPrice = items.reduce((accumulator, item) => {
+    return accumulator + item.price * item.quantity;
+  }, 0);
+
+  const finalMessage = `Hola! Quiero pedir:\n ${wppText} \nTotal: $${totalPrice}`;
+  const encodedMessage = encodeURIComponent(finalMessage);
+  const buyerWppUrl = `https://wa.me/${STORE_PHONE}?text=${encodedMessage}`;
+
+  return buyerWppUrl;
+}
+
+export const isCartOpen = atom(false);
+
+export function toggleCart() {
+  isCartOpen.set(!isCartOpen.get());
 }
