@@ -53,7 +53,7 @@ export function getWhatsAppUrl() {
     return accumulator + item.price * item.quantity;
   }, 0);
 
-  const finalMessage = `Hola! Quiero pedir:\n ${wppText} \nTotal: $${totalPrice}`;
+  const finalMessage = `Hola! Quiero pedir:\n${wppText}\nTotal: $${totalPrice}`;
   const encodedMessage = encodeURIComponent(finalMessage);
   const buyerWppUrl = `https://wa.me/${STORE_PHONE}?text=${encodedMessage}`;
 
