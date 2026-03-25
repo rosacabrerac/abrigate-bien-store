@@ -1,0 +1,48 @@
+import { useStore } from "@nanostores/react";
+import { useEffect, useState } from "react";
+import { cartItems, toggleCart } from "../store/cartStore";
+
+export default function CartIcon() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const $cartItems = useStore(cartItems);
+  const totalItems = Object.values($cartItems).reduce(
+    (accumulator, item) => accumulator + item.quantity,
+    0,
+  );
+
+  return (
+    <button
+      type="button"
+      className="relative bg-transparent border-none cursor-pointer"
+      onClick={() => toggleCart()}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"
+      >
+        <title>Shopping Bag</title>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304" />
+        <path d="M9 11v-5a3 3 0 0 1 6 0v5" />
+      </svg>
+      {mounted && totalItems > 0 && (
+        <span className="absolute text-white bg-amber-600 rounded-full top-0 right-0 w-5 h-5 flex items-center justify-center p-1">
+          {totalItems}
+        </span>
+      )}
+    </button>
+  );
+}

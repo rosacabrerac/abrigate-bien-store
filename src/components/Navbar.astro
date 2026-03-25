@@ -1,3 +1,7 @@
+---
+import CartIcon from "./CartIcon";
+---
+
 <nav class="w-full border-b border-gray-200">
   <div class="flex justify-between px-3 py-1 max-w-screen-xl mx-auto">
     <div>
@@ -7,6 +11,7 @@
       <a href="/">Inicio</a>
       <a href="/catalog">Catálogo</a>
       <a href="/contact">Contáctanos</a>
+      <CartIcon client:load />
     </div>
   </div>
 </nav>

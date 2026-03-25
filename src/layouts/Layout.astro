@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import CartDrawer from "../components/CartDrawer";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 
@@ -30,6 +31,7 @@ const { title = "Abrigate Bien Store 🔥" } = Astro.props;
     class="flex flex-col min-h-screen bg-blue-950 text-slate-300 dark:text-slate-500"
   >
     <Navbar />
+    <CartDrawer client:load/>
     <main class="flex-grow">
       <slot />
     </main>
