@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
 import { useEffect, useState } from "react";
-import { cartItems } from "../store/cartStore";
+import { cartItems, toggleCart } from "../store/cartStore";
 
 export default function CartIcon() {
   const [mounted, setMounted] = useState(false);
@@ -16,7 +16,11 @@ export default function CartIcon() {
   );
 
   return (
-    <div className="relative">
+    <button
+      type="button"
+      className="relative bg-transparent border-none cursor-pointer"
+      onClick={() => toggleCart()}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -39,6 +43,6 @@ export default function CartIcon() {
           {totalItems}
         </span>
       )}
-    </div>
+    </button>
   );
 }
