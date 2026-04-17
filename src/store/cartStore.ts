@@ -69,3 +69,11 @@ export function toggleCart() {
 export function clearCart() {
   cartItems.set({});
 }
+
+export function removeItemFromCart(cartItemId: string) {
+  const newCart = { ...cartItems.get() };
+
+  delete newCart[cartItemId];
+
+  cartItems.set(newCart);
+}
