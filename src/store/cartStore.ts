@@ -69,3 +69,17 @@ export function toggleCart() {
 export function clearCart() {
   cartItems.set({});
 }
+
+export function removeItemFromCart(cartItemId: string) {
+  const newCart = { ...cartItems.get() };
+
+  if (newCart[cartItemId].quantity > 1) {
+    newCart[cartItemId] = {
+      ...newCart[cartItemId],
+      quantity: newCart[cartItemId].quantity - 1,
+    };
+  } else {
+    delete newCart[cartItemId];
+  }
+  cartItems.set(newCart);
+}
