@@ -81,6 +81,5 @@ export function removeItemFromCart(cartItemId: string) {
   } else {
     delete newCart[cartItemId];
   }
-
   cartItems.set(newCart);
 }
