@@ -18,7 +18,7 @@ export default function CartIcon() {
   return (
     <button
       type="button"
-      className="relative bg-transparent border-none cursor-pointer"
+      className="relative bg-transparent border-none cursor-pointer focus:outline-none focus:ring focus:ring-amber-500 rounded-lg"
       onClick={() => toggleCart()}
     >
       <svg
