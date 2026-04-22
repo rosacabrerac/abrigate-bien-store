@@ -1,4 +1,5 @@
 import { useStore } from "@nanostores/react";
+import { useEffect, useRef } from "react";
 import {
   cartItems,
   clearCart,
@@ -11,6 +12,19 @@ export default function CartDrawer() {
   const $isCartOpen = useStore(isCartOpen);
   const $cartItems = useStore(cartItems);
 
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if ($isCartOpen) {
+      const elementToReturnFocus = document.activeElement as HTMLElement;
+      closeButtonRef.current?.focus();
+
+      return () => {
+        elementToReturnFocus.focus();
+      };
+    }
+  }, [$isCartOpen]);
+
   if (!$isCartOpen) return null;
 
   const isNotEmpty = Object.keys($cartItems).length > 0;
@@ -21,9 +35,26 @@ export default function CartDrawer() {
         type="button"
         className="fixed inset-0 bg-black/50 z-40 border-none"
         aria-label="Cerrar carrito"
+        tabIndex={-1}
         onClick={() => isCartOpen.set(false)}
       ></button>
-      <aside className="fixed right-0 top-0 h-full w-100 bg-white shadow-xl z-50 p-4">
+      <aside
+        role="dialog"
+        aria-modal="true"
+        aria-label="Carrito de compras"
+        className="fixed right-0 top-0 h-full w-100 bg-white shadow-xl z-50 p-4 "
+      >
+        <div className="flex justify-end">
+          <button
+            type="button"
+            ref={closeButtonRef}
+            onClick={() => isCartOpen.set(false)}
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500"
+            aria-label="Cerrar carrito"
+          >
+            X
+          </button>
+        </div>
         <ul>
           {Object.values($cartItems).map((item) => (
             <li key={`${item.id}-${item.size}`}>
