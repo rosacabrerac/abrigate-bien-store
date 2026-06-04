@@ -3,6 +3,7 @@ import "../styles/global.css";
 import CartDrawer from "../components/CartDrawer";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import ToastContainer from "../components/ToastContainer";
 
 interface Props {
   title?: string;
@@ -32,6 +33,7 @@ const { title = "Abrigate Bien Store 🔥" } = Astro.props;
   >
     <Navbar />
     <CartDrawer client:load/>
+    <ToastContainer client:load />
     <main class="flex-grow">
       <slot />
     </main>
