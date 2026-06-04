@@ -9,7 +9,7 @@
     "astro": "astro",
     "lint": "biome check",
     "check": "astro check",
-    "format": "biome format --write"
+    "format": "biome check --write"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
@@ -29,6 +29,7 @@
     "@biomejs/biome": "^2.4.7",
     "@commitlint/cli": "^20.4.3",
     "@commitlint/config-conventional": "^20.4.3",
+    "lefthook": "^2.1.9",
     "typescript": "^5.9.3"
   }
 }
