@@ -37,6 +37,12 @@ export function addItemsToCart(item: CartItem) {
       [cartItemId]: { ...item, quantity: 1 },
     });
   }
+  const newToast: Toast = {
+    id: Math.random().toString(),
+    message: `¡Añadido al carrito: ${item.name}! 🧥`,
+  };
+
+  toasts.set([...toasts.get(), newToast]);
 }
 
 export function getWhatsAppUrl() {
@@ -82,4 +88,15 @@ export function removeItemFromCart(cartItemId: string) {
     delete newCart[cartItemId];
   }
   cartItems.set(newCart);
+}
+
+export type Toast = {
+  id: string;
+  message: string;
+};
+
+export const toasts = atom<Toast[]>([]);
+
+export function removeToast(id: string) {
+  toasts.set(toasts.get().filter((toast) => toast.id !== id));
 }
