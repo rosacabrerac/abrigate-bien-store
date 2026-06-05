@@ -5,6 +5,7 @@ import { addItemsToCart } from "../store/cartStore";
 export default function CartInteraction({ product }: { product: Product }) {
   const [selectedSize, setSelectedSize] = useState("S");
   const [selectedColor, setSelectedColor] = useState("Slate");
+  const [isAdded, setIsAdded] = useState(false);
 
   const handleAddToCart = () => {
     const itemToBeAdded = {
@@ -19,6 +20,12 @@ export default function CartInteraction({ product }: { product: Product }) {
     };
 
     addItemsToCart(itemToBeAdded);
+
+    setIsAdded(true);
+
+    setTimeout(() => {
+      setIsAdded(false);
+    }, 2000);
   };
 
   return (
@@ -126,10 +133,11 @@ export default function CartInteraction({ product }: { product: Product }) {
       </div>
       <button
         type="button"
-        className="flex items-center justify-center gap-2 text-center cursor-pointer bg-orange-400 p-2 my-2 rounded-lg w-90 text-slate-800 font-bold"
+        className={`flex items-center justify-center gap-2 text-center cursor-pointer p-2 my-2 rounded-lg w-90 text-slate-800 font-bold transition-colors duration-300 ${isAdded ? "bg-emerald-500" : "bg-orange-400"}`}
         onClick={handleAddToCart}
+        disabled={isAdded}
       >
-        Añadir al Carrito
+        {isAdded ? "¡Añadido!" : "Añadir al Carrito"}
       </button>
     </div>
   );
