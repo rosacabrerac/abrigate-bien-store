@@ -4,6 +4,7 @@ import { cartItems, toggleCart } from "../store/cartStore";
 
 export default function CartIcon() {
   const [mounted, setMounted] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -14,6 +15,18 @@ export default function CartIcon() {
     (accumulator, item) => accumulator + item.quantity,
     0,
   );
+
+  useEffect(() => {
+    if (totalItems > 0) {
+      setAnimate(true);
+      const animateCart = setTimeout(() => {
+        setAnimate(false);
+      }, 300);
+      return () => {
+        clearTimeout(animateCart);
+      };
+    }
+  }, [totalItems]);
 
   return (
     <button
@@ -39,7 +52,9 @@ export default function CartIcon() {
         <path d="M9 11v-5a3 3 0 0 1 6 0v5" />
       </svg>
       {mounted && totalItems > 0 && (
-        <span className="absolute text-white bg-amber-600 rounded-full top-0 right-0 w-5 h-5 flex items-center justify-center p-1">
+        <span
+          className={`absolute text-white bg-amber-600 rounded-full top-0 right-0 w-5 h-5 flex items-center justify-center p-1 transition-transform duration-150 ${animate ? "scale-125" : "scale-100"}`}
+        >
           {totalItems}
         </span>
       )}
