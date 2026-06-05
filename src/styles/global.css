@@ -2,4 +2,14 @@
 
 @theme {
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+}
+
+:root {
+  --color-bg: #0a1628;
+  --color-brand: #f4541c;
+  --color-heading: #ffffff;
+  --color-body: #94a3b8;
+  --color-navbar: rgba(10, 22, 40, 0.75);
+  --color-border: rgba(255, 255, 255, 0.08);
 }

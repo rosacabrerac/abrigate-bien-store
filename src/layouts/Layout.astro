@@ -22,17 +22,15 @@ const { title = "Abrigate Bien Store 🔥" } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body
-    class="flex flex-col min-h-screen bg-blue-950 text-slate-300 dark:text-slate-500"
-  >
+  <body class="flex flex-col min-h-screen">
     <Navbar />
-    <CartDrawer client:load/>
+    <CartDrawer client:load />
     <ToastContainer client:load />
     <main class="flex-grow">
       <slot />
@@ -47,5 +45,8 @@ const { title = "Abrigate Bien Store 🔥" } = Astro.props;
     margin: 0;
     width: 100%;
     height: 100%;
+    background-color: var(--color-bg);
+    color: var(--color-body);
+    font-family: var(--font-sans);
   }
 </style>
