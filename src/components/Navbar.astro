@@ -1,17 +1,105 @@
 ---
 import CartIcon from "./CartIcon";
+import MobileMenu from "./MobileMenu";
 ---
 
-<nav class="w-full border-b border-gray-200">
-  <div class="flex justify-between px-3 py-1 max-w-screen-xl mx-auto">
-    <div>
-      <span>Abrigate Bien Store 🔥</span>
-    </div>
-    <div class="flex gap-2">
-      <a href="/">Inicio</a>
-      <a href="/catalog">Catálogo</a>
-      <a href="/contact">Contáctanos</a>
+<nav
+  class="fixed top-0 left-0 w-full h-20 z-40 bg-[var(--color-navbar)] backdrop-blur-md border-b border-[var(--color-border)]"
+>
+  <div
+    class="flex justify-between items-center px-6 h-full max-w-screen-xl mx-auto relative"
+  >
+    <a href="/" class="font-sans text-xl tracking-wide text-white hover:opacity-90 transition-opacity duration-200">
+      <span class="font-extrabold text-[var(--color-brand)]">Abrigate</span> Bien
+    </a>
+
+    <div class="flex items-center gap-4 md:gap-6">
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a
+          href="/"
+          class="text-slate-300 hover:text-white transition-colors duration-200"
+          >Inicio</a
+        >
+        <a
+          href="/catalog"
+          class="text-slate-300 hover:text-white transition-colors duration-200"
+          >Catálogo</a
+        >
+        <a
+          href="/contact"
+          class="text-slate-300 hover:text-white transition-colors duration-200"
+          >Contáctanos</a
+        >
+      </div>
+
+      <span class="hidden md:inline h-4 w-px bg-[var(--color-border)]"></span>
+
       <CartIcon client:load />
+
+      <span class="h-4 w-px bg-[var(--color-border)] md:hidden"></span>
+
+      <MobileMenu client:load>
+        <a
+          href="/"
+          class="mobile-nav-link text-slate-300 hover:text-white transition-all duration-200 py-3 px-2 rounded-lg hover:bg-white/5 border-b border-white/[0.03] flex items-center justify-between group"
+        >
+          <span class="font-medium">Inicio</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-[var(--color-brand)]"
+          >
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </a>
+        <a
+          href="/catalog"
+          class="mobile-nav-link text-slate-300 hover:text-white transition-all duration-200 py-3 px-2 rounded-lg hover:bg-white/5 border-b border-white/[0.03] flex items-center justify-between group"
+        >
+          <span class="font-medium">Catálogo</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-[var(--color-brand)]"
+          >
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </a>
+        <a
+          href="/contact"
+          class="mobile-nav-link text-slate-300 hover:text-white transition-all duration-200 py-3 px-2 rounded-lg hover:bg-white/5 flex items-center justify-between group"
+        >
+          <span class="font-medium">Contáctanos</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-[var(--color-brand)]"
+          >
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </a>
+      </MobileMenu>
     </div>
   </div>
 </nav>
