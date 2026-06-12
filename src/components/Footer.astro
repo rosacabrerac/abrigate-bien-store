@@ -2,36 +2,153 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="w-full border-t border-gray-200">
-  <div
-    class="max-w-screen-xl mx-auto px-4 flex flex-col items-center text-center py-1 gap-2"
-  >
-    <ul>
-      <li>
-        <a
-          href=""
-          aria-label="Síguenos en Instagram"
-          target="_blank"
-          rel="noopener noreferrer">Instagram</a
+<footer class="bg-[#050a14] border-t border-white/[0.03] pt-16 pb-8">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 md:items-baseline gap-10 md:gap-8 pb-16">
+      <div class="flex flex-col gap-4">
+        <a href="/" class="flex items-center gap-2.5 font-sans text-lg tracking-wide text-white hover:opacity-90 transition-opacity duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-auto" fill="none" viewBox="0 0 281 416" aria-hidden="true">
+            <path fill="#ff8612" stroke="#ff8612" d="M.596 279.5c0 30 10 68 38.5 93 12.5 11.667 45 36 75 40s51.833 1.667 59 0c12.166-3 41.4-13 61-29s30.833-33.667 34-40.5c4.833-9.833 13.8-36.6 11-65-3.5-35.5-25.5-67-35.5-82.5s-13.5-35-7.5-60.5c-7.334 2-24 11.6-32 34-10 28 5.5 48-10 50-9.918 1.28-16.167-20.5-16.5-33-.334-4.5-.5-14.7 1.5-19.5 2.5-6 8-32.5 8-35s4.5-26.5-2.5-51c-5.6-19.6-22.667-41.167-30.5-49.5-9.834-10.167-31.2-30.5-38-30.5 11 24 6.425 42.988 4.5 55.5-1 6.5-14.5 33.5-26 48.5-1.46 1.905-33 35.5-52 62l-.012.014c-1.867 2.376-12.912 16.434-24.488 39.986-11.6 23.6-18.5 60-17.5 73Z"/>
+            <path fill="#ffa70c" stroke="#ffa70c" d="M138.096 189.5c-1.6-9.6 1.5-36.5 5.5-45.5-15 17-30 33-37 41.5-9.5 12.333-28.647 42.234-34 62-6.5 24-8 32-8 66.5.5 12 3.7 40.3 12.5 57.5 11 21.5 35.5 39.8 39 40.5 5 1 21 4.5 52.5 1 17.2-9.2 30.666-23.5 35-29.5 4.833-5 14.8-21.8 16-49s-21-52.833-32.5-62l-15.5-15.5c-6.5-6.833-20.8-24.1-26-38.5-6.5-18-5.5-17-7.5-29Z"/>
+            <path fill="#ffc212" stroke="#ffc212" d="M145.096 290c-10-8.4-20.167-22.5-24-28.5-4.167 10.833-12.7 33.2-13.5 36-1 3.5-4.5 12.5-8.5 35.5-3.2 18.4 2.666 40 6 48.5 2.666 6.167 11.7 21.3 26.5 32.5h23.5c17.6-15.2 24.666-26.667 26-30.5 2.666-8.167 8-25 3-40-4.4-13.2-13.334-27.167-17.5-32-3-3.667-11.5-13.1-21.5-21.5Z"/>
+          </svg>
+          <span>
+            <span class="font-extrabold text-[var(--color-brand)]">Abrigate</span> Bien
+          </span>
+        </a>
+        <p class="font-sans text-xs text-slate-400 leading-relaxed max-w-xs">
+          Equipamiento térmico de alto rendimiento para soportar las condiciones
+          más extremas sin perder el estilo.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h3
+          class="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-brand)]"
         >
-      </li>
-      <li>
-        <a
-          href=""
-          aria-label="Síguenos en Facebook"
-          target="_blank"
-          rel="noopener noreferrer">Facebook</a
+          Navegación
+        </h3>
+        <ul class="flex flex-col gap-2.5">
+          <li>
+            <a
+              href="/"
+              class="font-sans text-xs text-slate-400 hover:text-white transition-colors duration-200"
+            >
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a
+              href="#productos"
+              class="font-sans text-xs text-slate-400 hover:text-white transition-colors duration-200"
+            >
+              Colección
+            </a>
+          </li>
+          <li>
+            <a
+              href="/faq"
+              class="font-sans text-xs text-slate-400 hover:text-white transition-colors duration-200"
+            >
+              Preguntas Frecuentes
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4 md:items-end">
+        <h3
+          class="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-brand)]"
         >
-      </li>
-      <li>
+          Comunidad
+        </h3>
+        <div class="flex gap-4 mt-1">
+          <a
+            href="https://instagram.com"
+            aria-label="Síguenos en Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-500 hover:text-white transition-colors duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
+              ></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+              ></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg
+            >
+          </a>
+          <a
+            href="https://facebook.com"
+            aria-label="Síguenos en Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-500 hover:text-white transition-colors duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://tiktok.com"
+            aria-label="Síguenos en TikTok"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-500 hover:text-white transition-colors duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              ><path
+                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"
+              ></path></svg
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="border-t border-white/[0.03] pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+    >
+      <span class="font-sans text-[10px] text-slate-500 tracking-wider">
+        © {currentYear} ABRIGATE BIEN. TODOS LOS DERECHOS RESERVADOS.
+      </span>
+      <div class="flex gap-6">
         <a
-          href=""
-          aria-label="Síguenos en TikTok"
-          target="_blank"
-          rel="noopener noreferrer">TikTok</a
+          href="/privacidad"
+          class="font-sans text-[10px] uppercase tracking-wider text-slate-500 hover:text-slate-300 transition-colors duration-200"
         >
-      </li>
-    </ul>
-    <span>{currentYear}© Todos los derechos reservados</span>
+          Políticas de Privacidad
+        </a>
+        <a
+          href="/terminos"
+          class="font-sans text-[10px] uppercase tracking-wider text-slate-500 hover:text-slate-300 transition-colors duration-200"
+        >
+          Términos de Servicio
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
