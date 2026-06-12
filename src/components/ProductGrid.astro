@@ -3,17 +3,41 @@ import { products } from "../data/products.ts";
 import ProductCard from "./ProductCard.astro";
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-  {
-    products.map((product) => (
-      <ProductCard
-        name={product.name}
-        price={product.price}
-        image={product.image}
-        description={product.description}
-        id={product.id}
-        slug={product.slug}
-      />
-    ))
-  }
+<section class="bg-[#07101d] py-20">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <p
+          class="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-brand)] mb-2"
+        >
+          Colección Técnica
+        </p>
+        <h2
+          class="font-display text-white text-3xl md:text-4xl font-bold leading-tight"
+        >
+          Equipamiento destacado
+        </h2>
+      </div>
+      <span
+        class="hidden md:block font-sans text-xs text-slate-500 uppercase tracking-widest"
+      >
+        {products.length} productos
+      </span>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      {
+        products.map((product) => (
+          <ProductCard
+            name={product.name}
+            price={product.price}
+            image={product.image}
+            description={product.description}
+            id={product.id}
+            slug={product.slug}
+          />
+        ))
+      }
+    </div>
+  </div>
 </section>
