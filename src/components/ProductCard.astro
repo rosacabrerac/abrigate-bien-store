@@ -9,18 +9,43 @@ interface Props {
 }
 
 const { name, price, image, description, id, slug } = Astro.props;
+
+const formattedPrice = new Intl.NumberFormat("es-AR", {
+  style: "currency",
+  currency: "ARS",
+  maximumFractionDigits: 0,
+}).format(price);
 ---
 
-<article
-  class="border border-white/10 bg-blue-900/40 hover:shadow-lg shadow-sm rounded-md p-3 overflow-hidden"
->
-  <img src={image} alt={name} class="aspect-square object-cover" />
-  <h2 class="font-bold">{name}</h2>
-  <p class="font-semibold text-neutral-900">${price}</p>
-  <p>{description}</p>
+<article class="group relative flex flex-col">
   <a
     href={`/products/${slug}`}
-    class="inline-block bg-blue-600 text-white rounded px-4 py-2 mt-2"
-    >Detalles</a
+    class="block relative overflow-hidden aspect-[3/4]"
   >
+    <img
+      src={image}
+      alt={name}
+      class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out flex flex-col justify-end p-5"
+    >
+      <span
+        class="block w-full text-center bg-[var(--color-brand)] text-white text-xs font-bold uppercase tracking-widest py-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-400 ease-out"
+      >
+        Ver Detalles
+      </span>
+    </div>
+  </a>
+
+  <div class="pt-3 pb-1">
+    <h2
+      class="font-sans text-sm font-semibold text-white leading-snug line-clamp-2"
+    >
+      {name}
+    </h2>
+    <p class="font-sans text-[var(--color-brand)] font-bold text-sm mt-1">
+      {formattedPrice}
+    </p>
+  </div>
 </article>
