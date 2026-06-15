@@ -7,9 +7,15 @@ import ToastContainer from "../components/ToastContainer";
 
 interface Props {
   title?: string;
+  description?: string;
+  ogImage?: string;
 }
 
-const { title = "Abrigate Bien Store 🔥" } = Astro.props;
+const {
+  title = "Abrigate Bien Store 🔥",
+  description = "La mejor ropa de abrigo para mantenerte caliente con estilo.",
+  ogImage = "/hero_bg.png",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -26,6 +32,10 @@ const { title = "Abrigate Bien Store 🔥" } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url)} />
   </head>
   <body class="flex flex-col min-h-screen">
     <Navbar />
