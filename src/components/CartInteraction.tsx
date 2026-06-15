@@ -84,9 +84,7 @@ export default function CartInteraction({ product }: { product: Product }) {
             checked={selectedSize === "S"}
             onChange={() => setSelectedSize("S")}
           />
-          <span className="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors">
-            S
-          </span>
+          <span className="size-selector">S</span>
         </label>
         <label className="cursor-pointer">
           <input
@@ -98,9 +96,7 @@ export default function CartInteraction({ product }: { product: Product }) {
             checked={selectedSize === "M"}
             onChange={() => setSelectedSize("M")}
           />
-          <span className="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors">
-            M
-          </span>
+          <span className="size-selector">M</span>
         </label>
         <label className="cursor-pointer">
           <input
@@ -112,9 +108,7 @@ export default function CartInteraction({ product }: { product: Product }) {
             checked={selectedSize === "L"}
             onChange={() => setSelectedSize("L")}
           />
-          <span className="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors">
-            L
-          </span>
+          <span className="size-selector">L</span>
         </label>
         <label className="cursor-pointer">
           <input
@@ -126,9 +120,7 @@ export default function CartInteraction({ product }: { product: Product }) {
             checked={selectedSize === "XL"}
             onChange={() => setSelectedSize("XL")}
           />
-          <span className="px-4 py-2 border rounded-md peer-checked:bg-blue-500 peer-checked:text-white transition-colors">
-            XL
-          </span>
+          <span className="size-selector">XL</span>
         </label>
       </div>
       <button
