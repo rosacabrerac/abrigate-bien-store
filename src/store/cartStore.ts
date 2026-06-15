@@ -78,11 +78,14 @@ export function clearCart() {
 
 export function removeItemFromCart(cartItemId: string) {
   const newCart = { ...cartItems.get() };
+  const item = newCart[cartItemId];
 
-  if (newCart[cartItemId].quantity > 1) {
+  if (!item) return;
+
+  if (item.quantity > 1) {
     newCart[cartItemId] = {
-      ...newCart[cartItemId],
-      quantity: newCart[cartItemId].quantity - 1,
+      ...item,
+      quantity: item.quantity - 1,
     };
   } else {
     delete newCart[cartItemId];
