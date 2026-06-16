@@ -34,14 +34,14 @@ export default function Drawer({
       ref={dialogRef}
       onClose={() => onClose()}
       aria-label={ariaLabel}
-      className="fixed right-0 top-0 m-0 h-full max-w-full max-h-screen border-none shadow-xl backdrop:bg-black/50 backdrop:backdrop-blur-sm ml-auto p-0"
+      className={`fixed right-0 top-0 m-0 h-full max-w-full max-h-screen border-none shadow-xl backdrop:bg-black/50 backdrop:backdrop-blur-sm ml-auto p-0 ${className || ""}`}
       onClick={(e) => {
         if (e.target === dialogRef.current) {
           onClose();
         }
       }}
     >
-      <div className={`h-full ${className || ""}`}>{children}</div>
+      <div className="h-full">{children}</div>
     </dialog>
   );
 }
