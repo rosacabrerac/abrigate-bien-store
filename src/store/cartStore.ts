@@ -17,7 +17,13 @@ export const cartItems = persistentAtom<Record<string, CartItem>>(
   {},
   {
     encode: JSON.stringify,
-    decode: JSON.parse,
+    decode: (value) => {
+      try {
+        return JSON.parse(value);
+      } catch {
+        return {};
+      }
+    },
   },
 );
 
