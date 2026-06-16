@@ -37,7 +37,7 @@ export default function CartInteraction({ product }: { product: Product }) {
           <label className="cursor-pointer">
             <input
               type="radio"
-              name="color"
+              name={`color-${product.id}`}
               value="slate"
               className="sr-only peer"
               checked={selectedColor === "Slate"}
@@ -49,7 +49,7 @@ export default function CartInteraction({ product }: { product: Product }) {
           <label className="cursor-pointer">
             <input
               type="radio"
-              name="color"
+              name={`color-${product.id}`}
               value="blue"
               className="sr-only peer"
               checked={selectedColor === "Blue"}
@@ -61,7 +61,7 @@ export default function CartInteraction({ product }: { product: Product }) {
           <label className="cursor-pointer">
             <input
               type="radio"
-              name="color"
+              name={`color-${product.id}`}
               value="black"
               className="sr-only peer"
               checked={selectedColor === "Black"}
@@ -77,8 +77,8 @@ export default function CartInteraction({ product }: { product: Product }) {
         <label className="cursor-pointer">
           <input
             type="radio"
-            name="size"
-            id="size-s"
+            name={`size-${product.id}`}
+            id={`size-s-${product.id}`}
             value="s"
             className="sr-only peer"
             checked={selectedSize === "S"}
@@ -89,8 +89,8 @@ export default function CartInteraction({ product }: { product: Product }) {
         <label className="cursor-pointer">
           <input
             type="radio"
-            name="size"
-            id="size-m"
+            name={`size-${product.id}`}
+            id={`size-m-${product.id}`}
             value="m"
             className="sr-only peer"
             checked={selectedSize === "M"}
@@ -101,8 +101,8 @@ export default function CartInteraction({ product }: { product: Product }) {
         <label className="cursor-pointer">
           <input
             type="radio"
-            name="size"
-            id="size-l"
+            name={`size-${product.id}`}
+            id={`size-l-${product.id}`}
             value="l"
             className="sr-only peer"
             checked={selectedSize === "L"}
@@ -113,8 +113,8 @@ export default function CartInteraction({ product }: { product: Product }) {
         <label className="cursor-pointer">
           <input
             type="radio"
-            name="size"
-            id="size-xl"
+            name={`size-${product.id}`}
+            id={`size-xl-${product.id}`}
             value="xl"
             className="sr-only peer"
             checked={selectedSize === "XL"}
