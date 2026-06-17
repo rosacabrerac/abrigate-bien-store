@@ -9,7 +9,7 @@ export default function CartInteraction({ product }: { product: Product }) {
 
   const handleAddToCart = () => {
     const itemToBeAdded = {
-      id: String(product.id),
+      id: product.id,
       name: product.name,
       price: product.price,
       description: product.description,

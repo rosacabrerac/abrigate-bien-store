@@ -6,11 +6,11 @@ interface Props {
   price: number;
   image: string;
   description: string;
-  id: number;
+  id: string;
   slug: string;
 }
 
-const { name, price, image, description, id, slug } = Astro.props;
+const { name, price, image, slug } = Astro.props;
 
 const formattedPrice = new Intl.NumberFormat("es-AR", {
   style: "currency",
