@@ -54,10 +54,12 @@ export function addItemsToCart(item: CartItem) {
 export function getWhatsAppUrl() {
   const items = Object.values(cartItems.get());
 
+  if (items.length === 0) return null;
+
   const wppText = items
     .map(
       (item) =>
-        `- ${item.quantity} ${item.name} ${item.color} (Talle: ${item.size}) $${item.price}`,
+        `- ${item.quantity} ${item.name} ${item.color} (Talle: ${item.size}) $${item.price} c/u`,
     )
     .join("\n");
 
