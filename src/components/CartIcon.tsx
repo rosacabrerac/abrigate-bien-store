@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cartItems, toggleCart } from "../store/cartStore";
 
 export default function CartIcon() {
@@ -16,8 +16,17 @@ export default function CartIcon() {
     0,
   );
 
+  const isFirstRender = useRef(true);
+  const prevTotalItems = useRef(totalItems);
+
   useEffect(() => {
-    if (totalItems > 0) {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      prevTotalItems.current = totalItems;
+      return;
+    }
+
+    if (totalItems > prevTotalItems.current) {
       setAnimate(true);
       const animateCart = setTimeout(() => {
         setAnimate(false);
@@ -26,6 +35,8 @@ export default function CartIcon() {
         clearTimeout(animateCart);
       };
     }
+
+    prevTotalItems.current = totalItems;
   }, [totalItems]);
 
   return (
