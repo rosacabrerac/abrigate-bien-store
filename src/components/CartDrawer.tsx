@@ -1,4 +1,5 @@
 import { useStore } from "@nanostores/react";
+import { useEffect, useState } from "react";
 import {
   cartItems,
   clearCart,
@@ -11,8 +12,13 @@ import Drawer from "./Drawer";
 export default function CartDrawer() {
   const $isCartOpen = useStore(isCartOpen);
   const $cartItems = useStore(cartItems);
+  const [mounted, setMounted] = useState(false);
 
   const isNotEmpty = Object.keys($cartItems).length > 0;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <Drawer
@@ -49,54 +55,56 @@ export default function CartDrawer() {
             </svg>
           </button>
         </div>
-        <ul className="flex-grow overflow-y-auto my-4 pr-1">
-          {Object.values($cartItems).map((item) => (
-            <li
-              key={`${item.id}-${item.size}`}
-              className="flex items-center justify-between py-4 border-b border-[var(--color-border)]"
-            >
-              <div className="flex flex-col gap-1">
-                <span>
-                  {item.quantity} x {item.name} -{" "}
-                  <span className="font-semibold">${item.price}</span>
-                </span>
-                <span className="text-xs text-slate-400">
-                  Talle: {item.size} | Color: {item.color}
-                </span>
-              </div>
-
-              <button
-                type="button"
-                title="Close"
-                onClick={() =>
-                  removeItemFromCart(`${item.id}-${item.size}-${item.color}`)
-                }
+        {mounted && isNotEmpty && (
+          <ul className="flex-grow overflow-y-auto my-4 pr-1">
+            {Object.values($cartItems).map((item) => (
+              <li
+                key={`${item.id}-${item.size}`}
+                className="flex items-center justify-between py-4 border-b border-[var(--color-border)]"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-slate-400 hover:text-red-500 transition-colors cursor-pointer"
+                <div className="flex flex-col gap-1">
+                  <span>
+                    {item.quantity} x {item.name} -{" "}
+                    <span className="font-semibold">${item.price}</span>
+                  </span>
+                  <span className="text-xs text-slate-400">
+                    Talle: {item.size} | Color: {item.color}
+                  </span>
+                </div>
+
+                <button
+                  type="button"
+                  title="Close"
+                  onClick={() =>
+                    removeItemFromCart(`${item.id}-${item.size}-${item.color}`)
+                  }
                 >
-                  <title>Borrar producto del carrito</title>
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M4 7l16 0" />
-                  <path d="M10 11l0 6" />
-                  <path d="M14 11l0 6" />
-                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                </svg>
-              </button>
-            </li>
-          ))}
-        </ul>
-        {isNotEmpty ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-slate-400 hover:text-red-500 transition-colors cursor-pointer"
+                  >
+                    <title>Borrar producto del carrito</title>
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M4 7l16 0" />
+                    <path d="M10 11l0 6" />
+                    <path d="M14 11l0 6" />
+                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                  </svg>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+        {mounted && isNotEmpty ? (
           <div className="mt-auto flex flex-col gap-3">
             <button
               type="button"
