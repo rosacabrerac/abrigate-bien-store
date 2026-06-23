@@ -37,11 +37,11 @@ import MobileMenu from "./MobileMenu";
 
       <span class="hidden md:inline h-4 w-px bg-[var(--color-border)]"></span>
 
-      <CartIcon client:load />
+      <CartIcon client:idle />
 
       <span class="h-4 w-px bg-[var(--color-border)] md:hidden"></span>
 
-      <MobileMenu client:load>
+      <MobileMenu client:media="(max-width: 767px)">
         <a
           href="/"
           class="mobile-nav-link text-slate-300 hover:text-white transition-all duration-200 py-3 px-2 rounded-lg hover:bg-white/5 border-b border-white/[0.03] flex items-center justify-between group"
