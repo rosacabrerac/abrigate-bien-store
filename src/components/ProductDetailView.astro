@@ -43,7 +43,6 @@ const { product, wppUrl } = Astro.props;
       <div>
         <div>
           <CartInteraction product={product} client:load />
-          <p class="underline py-2">(?) Ver Guía de Talles</p>
         </div>
         <p>{product?.description}</p>
         <a
