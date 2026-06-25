@@ -60,7 +60,7 @@ export default function CartDrawer() {
           <ul className="flex-grow overflow-y-auto my-4 pr-1">
             {Object.values($cartItems).map((item) => (
               <li
-                key={`${item.id}-${item.size}`}
+                key={`${item.id}-${item.size}-${item.color}`}
                 className="flex items-center justify-between py-4 border-b border-[var(--color-border)]"
               >
                 <div className="flex flex-col gap-1">
