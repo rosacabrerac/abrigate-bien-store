@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 <Layout
   title={product.name}
   description={product.description}
-  ogImage={product.image}
+  ogImage={product.image.src}
 >
   <ProductDetailView product={product} wppUrl={wppUrl} />
 </Layout>
