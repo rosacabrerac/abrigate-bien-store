@@ -29,12 +29,7 @@ const { product, wppUrl } = Astro.props;
     Volver al Inicio</a
   >
   <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
-    <Image
-      src={product.image}
-      alt={product.name}
-      inferSize={true}
-      format="webp"
-    />
+    <Image src={product.image} alt={product.name} format="webp" />
     <div>
       <h1 class="text-2xl font-bold text-[var(--color-brand)]">
         {product.name}
