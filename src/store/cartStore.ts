@@ -27,7 +27,7 @@ export const cartItems = persistentAtom<Record<string, CartItem>>(
   },
 );
 
-export function addItemsToCart(item: CartItem) {
+export function addItemToCart(item: CartItem) {
   const cartItemId = `${item.id}-${item.size}-${item.color}`;
 
   const existingItem = cartItems.get()[cartItemId];
@@ -35,12 +35,15 @@ export function addItemsToCart(item: CartItem) {
   if (existingItem) {
     cartItems.set({
       ...cartItems.get(),
-      [cartItemId]: { ...existingItem, quantity: existingItem.quantity + 1 },
+      [cartItemId]: {
+        ...existingItem,
+        quantity: existingItem.quantity + item.quantity,
+      },
     });
   } else {
     cartItems.set({
       ...cartItems.get(),
-      [cartItemId]: { ...item, quantity: 1 },
+      [cartItemId]: { ...item, quantity: item.quantity },
     });
   }
   const newToast: Toast = {
