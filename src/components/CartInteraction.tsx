@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Product } from "../data/products";
-import { addItemsToCart } from "../store/cartStore";
+import { addItemToCart } from "../store/cartStore";
 import Modal from "./Modal";
 
 const SIZE_CHART = [
@@ -51,7 +51,7 @@ export default function CartInteraction({ product }: { product: Product }) {
       quantity: 1,
     };
 
-    addItemsToCart(itemToBeAdded);
+    addItemToCart(itemToBeAdded);
 
     setIsAdded(true);
 
