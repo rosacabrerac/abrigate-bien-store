@@ -46,6 +46,7 @@ export default function MobileMenu({ children }: MobileMenuProps) {
         className={`fixed top-0 right-0 w-72 h-screen z-50 bg-[#0a1628] border-l border-[var(--color-border)] shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        inert={!isOpen}
       >
         <div className="flex justify-end items-center h-16 px-6 border-b border-white/[0.03]">
           <button
