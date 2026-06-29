@@ -13,9 +13,9 @@ interface Props {
 
 const { name, price, image, slug } = Astro.props;
 
-const formattedPrice = new Intl.NumberFormat("es-AR", {
+const formattedPrice = new Intl.NumberFormat("es-UY", {
   style: "currency",
-  currency: "ARS",
+  currency: "UYU",
   maximumFractionDigits: 0,
 }).format(price);
 ---

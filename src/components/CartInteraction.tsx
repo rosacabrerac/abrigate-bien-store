@@ -31,16 +31,19 @@ const SIZE_CHART = [
 ];
 
 export default function CartInteraction({ product }: { product: Product }) {
-  const [selectedSize, setSelectedSize] = useState("S");
-  const [selectedColor, setSelectedColor] = useState("Slate");
+  const [selectedSize, setSelectedSize] = useState(product.sizes[0].name);
+  const [selectedColor, setSelectedColor] = useState(product.colors[0].name);
   const [isAdded, setIsAdded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const currentSize = product.sizes.find((size) => size.name === selectedSize);
+  const finalPrice = currentSize?.price ?? product.price;
 
   const handleAddToCart = () => {
     const itemToBeAdded = {
       id: product.id,
       name: product.name,
-      price: product.price,
+      price: finalPrice,
       description: product.description,
       image: product.image.src,
       size: selectedSize,
@@ -59,100 +62,53 @@ export default function CartInteraction({ product }: { product: Product }) {
 
   return (
     <div className="flex flex-col gap-4 py-2 w-full">
+      <span>
+        {new Intl.NumberFormat("es-UY", {
+          style: "currency",
+          currency: "UYU",
+          maximumFractionDigits: 0,
+        }).format(finalPrice)}
+      </span>
       <div>
         <h2>Color:</h2>
         <p>{selectedColor}</p>
         <div className="flex gap-3 py-2">
-          <label className="cursor-pointer">
-            <input
-              type="radio"
-              name={`color-${product.id}`}
-              value="slate"
-              className="sr-only peer"
-              checked={selectedColor === "Slate"}
-              onChange={() => setSelectedColor("Slate")}
-              aria-label="Color Gris"
-            />
-            <span className="w-6 h-6 inline-block rounded-full bg-slate-400 peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-400"></span>
-          </label>
-          <label className="cursor-pointer">
-            <input
-              type="radio"
-              name={`color-${product.id}`}
-              value="blue"
-              className="sr-only peer"
-              checked={selectedColor === "Blue"}
-              onChange={() => setSelectedColor("Blue")}
-              aria-label="Color Azul"
-            />
-            <span className="w-6 h-6 inline-block rounded-full bg-blue-400 peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-400"></span>
-          </label>
-          <label className="cursor-pointer">
-            <input
-              type="radio"
-              name={`color-${product.id}`}
-              value="black"
-              className="sr-only peer"
-              checked={selectedColor === "Black"}
-              onChange={() => setSelectedColor("Black")}
-              aria-label="Color Negro"
-            />
-            <span className="w-6 h-6 inline-block rounded-full bg-black peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-400"></span>
-          </label>
+          {product.colors.map((color) => (
+            <label key={color.name} className="cursor-pointer">
+              <input
+                type="radio"
+                name={`color-${product.id}`}
+                value={color.name}
+                className="sr-only peer"
+                checked={selectedColor === color.name}
+                onChange={() => setSelectedColor(color.name)}
+                aria-label={`Color ${color.name}`}
+              />
+              <span
+                className={`w-6 h-6 inline-block rounded-full peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-400`}
+                style={{ backgroundColor: color.hex }}
+              ></span>
+            </label>
+          ))}
         </div>
       </div>
 
       <div>
         <h2>Seleccioná tu Talle:</h2>
         <div className="flex gap-2 py-2">
-          <label className="cursor-pointer">
-            <input
-              type="radio"
-              name={`size-${product.id}`}
-              id={`size-s-${product.id}`}
-              value="s"
-              className="sr-only peer"
-              checked={selectedSize === "S"}
-              onChange={() => setSelectedSize("S")}
-            />
-            <span className="size-selector">S</span>
-          </label>
-          <label className="cursor-pointer">
-            <input
-              type="radio"
-              name={`size-${product.id}`}
-              id={`size-m-${product.id}`}
-              value="m"
-              className="sr-only peer"
-              checked={selectedSize === "M"}
-              onChange={() => setSelectedSize("M")}
-            />
-            <span className="size-selector">M</span>
-          </label>
-          <label className="cursor-pointer">
-            <input
-              type="radio"
-              name={`size-${product.id}`}
-              id={`size-l-${product.id}`}
-              value="l"
-              className="sr-only peer"
-              checked={selectedSize === "L"}
-              onChange={() => setSelectedSize("L")}
-            />
-            <span className="size-selector">L</span>
-          </label>
-          <label className="cursor-pointer">
-            <input
-              type="radio"
-              name={`size-${product.id}`}
-              id={`size-xl-${product.id}`}
-              value="xl"
-              className="sr-only peer"
-              checked={selectedSize === "XL"}
-              onChange={() => setSelectedSize("XL")}
-            />
-            <span className="size-selector">XL</span>
-          </label>
+          {product.sizes.map((size) => (
+            <label key={size.name} className="cursor-pointer">
+              <input
+                type="radio"
+                name={`size-${product.id}`}
+                value={size.name}
+                className="sr-only peer"
+                checked={selectedSize === size.name}
+                onChange={() => setSelectedSize(size.name)}
+              />
+              <span className="size-selector">{size.name}</span>
+            </label>
+          ))}
         </div>
 
         <button
