@@ -13,6 +13,17 @@ export const rawProducts = [
     description:
       "Chaleco de polar técnico aislante, diseño anatómico y térmico para mujer.",
     image: chalecoDama,
+    sizes: [
+      { name: "S", price: 1800 },
+      { name: "M" },
+      { name: "L" },
+      { name: "XL" },
+    ],
+    colors: [
+      { name: "Gris", hex: "#64748b" },
+      { name: "Azul", hex: "#05198a" },
+      { name: "Bordó", hex: "#380324" },
+    ],
   },
   {
     id: "1",
@@ -21,6 +32,17 @@ export const rawProducts = [
     description:
       "Chaleco de polar técnico aislante con detalles reforzados para hombre.",
     image: chalecoCaballero,
+    sizes: [
+      { name: "S", price: 1800 },
+      { name: "M" },
+      { name: "L" },
+      { name: "XL" },
+    ],
+    colors: [
+      { name: "Gris", hex: "#64748b" },
+      { name: "Azul", hex: "#05198a" },
+      { name: "Negro", hex: "#000" },
+    ],
   },
   {
     id: "2",
@@ -29,6 +51,17 @@ export const rawProducts = [
     description:
       "Campera térmica de polar de alta densidad para mujer, con cierre completo y protección contra viento.",
     image: camperaDama,
+    sizes: [
+      { name: "S", price: 1800 },
+      { name: "M" },
+      { name: "L" },
+      { name: "XL" },
+    ],
+    colors: [
+      { name: "Gris", hex: "#64748b" },
+      { name: "Azul", hex: "#05198a" },
+      { name: "Negro", hex: "#000" },
+    ],
   },
   {
     id: "3",
@@ -37,8 +70,29 @@ export const rawProducts = [
     description:
       "Campera térmica de polar de alta densidad para hombre, con bolsillos reforzados y cierre completo.",
     image: camperaCaballero,
+    sizes: [
+      { name: "S", price: 1800 },
+      { name: "M" },
+      { name: "L" },
+      { name: "XL" },
+    ],
+    colors: [
+      { name: "Gris", hex: "#64748b" },
+      { name: "Azul", hex: "#05198a" },
+      { name: "Negro", hex: "#000" },
+    ],
   },
 ];
+
+interface ProductSize {
+  name: string;
+  price?: number;
+}
+
+interface ProductColor {
+  name: string;
+  hex: string;
+}
 
 export interface Product {
   id: string;
@@ -47,9 +101,11 @@ export interface Product {
   description: string;
   image: ImageMetadata;
   slug: string;
+  sizes: ProductSize[];
+  colors: ProductColor[];
 }
 
-export const products = rawProducts.map((product) => ({
+export const products: Product[] = rawProducts.map((product) => ({
   ...product,
   slug: slugify(product.name),
 }));
