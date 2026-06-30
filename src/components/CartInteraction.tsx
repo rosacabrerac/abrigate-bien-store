@@ -113,7 +113,7 @@ export default function CartInteraction({ product }: { product: Product }) {
 
         <button
           type="button"
-          className="text-[var(--color-brand)] underline cursor-pointer mt-3 inline-block hover:text-orange-400 transition-colors"
+          className="text-brand underline cursor-pointer mt-3 inline-block hover:text-orange-400 transition-colors"
           onClick={() => setIsModalOpen(true)}
         >
           Abrir Guía de Talles
@@ -136,7 +136,7 @@ export default function CartInteraction({ product }: { product: Product }) {
       >
         <div>
           <div className="flex justify-between items-center mb-6">
-            <h2 className="font-semibold uppercase tracking-wider text-[var(--color-brand)]">
+            <h2 className="font-semibold uppercase tracking-wider text-brand">
               Guía de Talles
             </h2>
 
@@ -209,7 +209,7 @@ export default function CartInteraction({ product }: { product: Product }) {
           </table>
 
           <div className="mt-6 pt-6 border-t border-white/10">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-brand)] mb-3">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-brand mb-3">
               Cómo tomar mis medidas para saber mi talle
             </h3>
             <ul className="text-sm text-slate-400 leading-relaxed">
