@@ -43,7 +43,7 @@ export default function MobileMenu({ children }: MobileMenuProps) {
       />
 
       <div
-        className={`fixed top-0 right-0 w-72 h-screen z-50 bg-[#0a1628] border-l border-[var(--color-border)] shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 w-72 h-screen z-50 bg-[#0a1628] border-l border-border shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         inert={!isOpen}
@@ -51,7 +51,7 @@ export default function MobileMenu({ children }: MobileMenuProps) {
         <div className="flex justify-end items-center h-16 px-6 border-b border-white/[0.03]">
           <button
             type="button"
-            className="text-white hover:text-[var(--color-brand)] transition-colors cursor-pointer flex items-center justify-center w-8 h-8"
+            className="text-white hover:text-brand transition-colors cursor-pointer flex items-center justify-center w-8 h-8"
             onClick={() => setIsOpen(false)}
             aria-label="Cerrar menú"
           >

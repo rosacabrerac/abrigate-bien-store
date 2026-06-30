@@ -37,7 +37,7 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.url)} />
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen text-body bg-bg">
     <Navbar />
     <CartDrawer client:load />
     <ToastContainer client:load />
@@ -54,8 +54,6 @@ const {
     margin: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-bg);
-    color: var(--color-body);
     font-family: var(--font-sans);
   }
 </style>

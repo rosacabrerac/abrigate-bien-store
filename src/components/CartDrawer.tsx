@@ -25,7 +25,7 @@ export default function CartDrawer() {
     <Drawer
       isOpen={$isCartOpen}
       onClose={() => isCartOpen.set(false)}
-      className="w-full sm:max-w-md bg-[var(--color-bg)]"
+      className="w-full sm:max-w-md bg-bg"
       ariaLabel="Carrito de compras"
     >
       <div className="p-4 flex flex-col h-full text-white/80">
@@ -61,7 +61,7 @@ export default function CartDrawer() {
             {Object.values($cartItems).map((item) => (
               <li
                 key={`${item.id}-${item.size}-${item.color}`}
-                className="flex items-center justify-between py-4 border-b border-[var(--color-border)]"
+                className="flex items-center justify-between py-4 border-b border-border"
               >
                 <div className="flex flex-col gap-1">
                   <span>

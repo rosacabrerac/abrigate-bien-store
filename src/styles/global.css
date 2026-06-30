@@ -3,21 +3,18 @@
 @theme {
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Playfair Display", serif;
-}
-
-@utility hero-floating-icon {
-  @apply flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-[var(--color-brand)] opacity-80 animate-pulse;
-}
-
-@utility size-selector {
-  @apply px-4 py-2 border rounded-md transition-colors peer-checked:bg-[var(--color-brand)] peer-checked:text-white;
-}
-
-:root {
   --color-bg: #0a1628;
   --color-brand: #f4541c;
   --color-heading: #ffffff;
   --color-body: #94a3b8;
   --color-navbar: rgba(10, 22, 40, 0.75);
   --color-border: rgba(255, 255, 255, 0.08);
+}
+
+@utility hero-floating-icon {
+  @apply flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-brand opacity-80 animate-pulse;
+}
+
+@utility size-selector {
+  @apply px-4 py-2 border rounded-md transition-colors peer-checked:bg-brand peer-checked:text-white;
 }
