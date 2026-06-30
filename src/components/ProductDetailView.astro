@@ -31,7 +31,7 @@ const { product, wppUrl } = Astro.props;
   <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <Image src={product.image} alt={product.name} format="webp" />
     <div>
-      <h1 class="text-2xl font-bold text-[var(--color-brand)]">
+      <h1 class="text-2xl font-bold text-brand">
         {product.name}
       </h1>
       <div>
@@ -43,7 +43,7 @@ const { product, wppUrl } = Astro.props;
           href={wppUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2 text-center cursor-pointer bg-[var(--color-brand)] p-2 my-2 rounded-lg w-full max-w-sm text-[var(--color-bg)] font-bold"
+          class="flex items-center justify-center gap-2 text-center cursor-pointer bg-brand p-2 my-2 rounded-lg w-full max-w-sm text-bg font-bold"
           ><svg
             class="w-5 h-5"
             role="img"
