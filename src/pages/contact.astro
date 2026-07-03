@@ -1,4 +1,11 @@
 ---
+import {
+  STORE_COVERAGE,
+  STORE_EMAIL,
+  STORE_PHONE_DISPLAY,
+  STORE_PHONE_URL,
+  STORE_SCHEDULE,
+} from "../constants";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -45,10 +52,10 @@ import Layout from "../layouts/Layout.astro";
                 Email
               </p>
               <a
-                href="mailto:abrigatebien@gmail.com"
+                href={`mailto:${STORE_EMAIL}`}
                 class="text-sm font-medium text-white hover:text-brand transition-colors duration-200 mt-1 block"
               >
-                abrigatebien@gmail.com
+                {STORE_EMAIL}
               </a>
             </div>
           </div>
@@ -74,10 +81,10 @@ import Layout from "../layouts/Layout.astro";
                 Teléfono
               </p>
               <a
-                href="tel:+59891000111"
+                href={STORE_PHONE_URL}
                 class="text-sm font-medium text-white/80 hover:text-brand transition-colors duration-200 mt-1 block"
               >
-                +598 91 000 111
+                {STORE_PHONE_DISPLAY}
               </a>
             </div>
           </div>
@@ -103,7 +110,7 @@ import Layout from "../layouts/Layout.astro";
                 Horario de atención
               </p>
               <p class="text-sm font-medium text-white mt-1">
-                Lunes a Viernes de 9:00 a 18:00 hs
+                {STORE_SCHEDULE}
               </p>
             </div>
           </div>
@@ -129,7 +136,7 @@ import Layout from "../layouts/Layout.astro";
                 Área de Cobertura
               </p>
               <p class="text-sm font-medium text-white mt-1">
-                Uruguay (Envíos a todo el país)
+                {STORE_COVERAGE}
               </p>
             </div>
           </div>
