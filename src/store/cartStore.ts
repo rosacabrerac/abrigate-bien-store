@@ -54,8 +54,8 @@ export function addItemToCart(item: CartItem) {
   toasts.set([...toasts.get(), newToast]);
 }
 
-export function getWhatsAppUrl() {
-  const items = Object.values(cartItems.get());
+export function getWhatsAppUrl(itemsMap: Record<string, CartItem>) {
+  const items = Object.values(itemsMap);
 
   if (items.length === 0) return null;
 
