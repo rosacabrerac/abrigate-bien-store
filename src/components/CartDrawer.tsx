@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   cartItems,
   clearCart,
@@ -13,7 +13,7 @@ export default function CartDrawer() {
   const $isCartOpen = useStore(isCartOpen);
   const $cartItems = useStore(cartItems);
   const [mounted, setMounted] = useState(false);
-  const wppUrl = getWhatsAppUrl();
+  const wppUrl = useMemo(() => getWhatsAppUrl($cartItems), [$cartItems]);
 
   const isNotEmpty = Object.keys($cartItems).length > 0;
 
