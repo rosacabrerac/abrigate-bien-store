@@ -1,1 +1,9 @@
 export const STORE_PHONE = "59891368200";
+export const STORE_PHONE_DISPLAY = "+598 91 000 111";
+export const STORE_PHONE_URL = "tel:+59891000111";
+export const STORE_EMAIL = "abrigatebien@gmail.com";
+export const STORE_SCHEDULE = "Lunes a Viernes de 9:00 a 18:00 hs";
+export const STORE_COVERAGE = "Uruguay (Envíos a todo el país)";
+export const STORE_INSTAGRAM = "https://www.instagram.com/abrigate-bien-store";
+export const STORE_FACEBOOK = "https://www.faceboook.com/abrigate-bien-store";
+export const STORE_TIKTOK = "https://www.tiktok.com/abrigate-bien-store";
