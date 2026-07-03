@@ -1,5 +1,7 @@
 ---
 const currentYear = new Date().getFullYear();
+
+import { STORE_FACEBOOK, STORE_INSTAGRAM, STORE_TIKTOK } from "../constants";
 ---
 
 <footer class="bg-[#050a14] border-t border-white/[0.03] pt-16 pb-8">
@@ -87,7 +89,7 @@ const currentYear = new Date().getFullYear();
         </h3>
         <div class="flex gap-4 mt-1">
           <a
-            href="https://instagram.com"
+            href={STORE_INSTAGRAM}
             aria-label="Síguenos en Instagram"
             target="_blank"
             rel="noopener noreferrer"
@@ -109,7 +111,7 @@ const currentYear = new Date().getFullYear();
             >
           </a>
           <a
-            href="https://facebook.com"
+            href={STORE_FACEBOOK}
             aria-label="Síguenos en Facebook"
             target="_blank"
             rel="noopener noreferrer"
@@ -131,7 +133,7 @@ const currentYear = new Date().getFullYear();
             >
           </a>
           <a
-            href="https://tiktok.com"
+            href={STORE_TIKTOK}
             aria-label="Síguenos en TikTok"
             target="_blank"
             rel="noopener noreferrer"
