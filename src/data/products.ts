@@ -9,16 +9,11 @@ export const rawProducts = [
   {
     id: "0",
     name: "Chaleco Polar Técnico — Dama",
-    price: 1850,
+    price: 2500,
     description:
       "Chaleco de polar técnico aislante, diseño anatómico y térmico para mujer.",
     image: chalecoDama,
-    sizes: [
-      { name: "S", price: 1800 },
-      { name: "M" },
-      { name: "L" },
-      { name: "XL" },
-    ],
+    sizes: [{ name: "S" }, { name: "M" }, { name: "L" }, { name: "XL" }],
     colors: [
       { name: "Gris", hex: "#64748b" },
       { name: "Azul", hex: "#05198a" },
@@ -28,16 +23,11 @@ export const rawProducts = [
   {
     id: "1",
     name: "Chaleco Polar Técnico — Caballero",
-    price: 1450,
+    price: 2500,
     description:
       "Chaleco de polar técnico aislante con detalles reforzados para hombre.",
     image: chalecoCaballero,
-    sizes: [
-      { name: "S", price: 1800 },
-      { name: "M" },
-      { name: "L" },
-      { name: "XL" },
-    ],
+    sizes: [{ name: "S" }, { name: "M" }, { name: "L" }, { name: "XL" }],
     colors: [
       { name: "Gris", hex: "#64748b" },
       { name: "Azul", hex: "#05198a" },
@@ -51,12 +41,7 @@ export const rawProducts = [
     description:
       "Campera térmica de polar de alta densidad para mujer, con cierre completo y protección contra viento.",
     image: camperaDama,
-    sizes: [
-      { name: "S", price: 1800 },
-      { name: "M" },
-      { name: "L" },
-      { name: "XL" },
-    ],
+    sizes: [{ name: "S" }, { name: "M" }, { name: "L" }, { name: "XL" }],
     colors: [
       { name: "Gris", hex: "#64748b" },
       { name: "Azul", hex: "#05198a" },
@@ -66,16 +51,11 @@ export const rawProducts = [
   {
     id: "3",
     name: "Campera de Expedición Polar — Caballero",
-    price: 1200,
+    price: 4900,
     description:
       "Campera térmica de polar de alta densidad para hombre, con bolsillos reforzados y cierre completo.",
     image: camperaCaballero,
-    sizes: [
-      { name: "S", price: 1800 },
-      { name: "M" },
-      { name: "L" },
-      { name: "XL" },
-    ],
+    sizes: [{ name: "S" }, { name: "M" }, { name: "L" }, { name: "XL" }],
     colors: [
       { name: "Gris", hex: "#64748b" },
       { name: "Azul", hex: "#05198a" },
