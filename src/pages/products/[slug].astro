@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 <Layout
   title={product.name}
-  description={product.description}
+  description={product.description.split("\n\n")[0]}
   ogImage={product.image.src}
 >
   <ProductDetailView product={product} />
