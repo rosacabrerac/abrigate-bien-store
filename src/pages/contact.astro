@@ -147,7 +147,11 @@ import Layout from "../layouts/Layout.astro";
         <h2 class="text-xl font-bold text-white mb-6">
           Formulario de contacto
         </h2>
-        <form>
+        <form
+          action="https://formspree.io/f/xwvdabzp"
+          method="POST"
+          id="contact-form"
+        >
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
             <div>
               <label
@@ -158,6 +162,7 @@ import Layout from "../layouts/Layout.astro";
                 type="text"
                 id="form-name"
                 name="form-name"
+                required
                 class="w-full bg-slate-900/50 border border-border transition-colors duration-200 focus:border-brand focus:outline-none py-3 px-4 rounded-xl text-white"
               />
             </div>
@@ -171,6 +176,7 @@ import Layout from "../layouts/Layout.astro";
                 type="email"
                 id="form-email"
                 name="form-email"
+                required
                 class="w-full bg-slate-900/50 border border-border transition-colors duration-200 focus:border-brand focus:outline-none py-3 px-4 rounded-xl text-white"
               />
             </div>
@@ -184,17 +190,65 @@ import Layout from "../layouts/Layout.astro";
             <textarea
               name="form-msg"
               id="form-msg"
+              required
               class="w-full h-32 bg-slate-900/50 border border-border transition-colors duration-200 focus:border-brand focus:outline-none py-3 px-4 rounded-xl text-white resize-none"
             ></textarea>
           </div>
 
+          <div id="error-message" class="hidden text-brand pb-2">
+            <p>Revise los campos.</p>
+          </div>
           <button
             type="submit"
             class="bg-brand px-8 py-2.5 text-white font-bold rounded-xl hover:opacity-90 transition-opacity cursor-pointer"
             >Enviar</button
           >
         </form>
+        <div id="success-message" class="hidden">
+          <p>¡Mensaje enviado con éxito!</p>
+        </div>
       </div>
     </div>
   </div>
 </Layout>
+
+<script>
+  const contactForm = document.getElementById(
+    "contact-form",
+  ) as HTMLFormElement;
+  const successMsg = document.getElementById("success-message");
+  const errorMsg = document.getElementById("error-message");
+  const formName = document.getElementById("form-name") as HTMLInputElement;
+  const formEmail = document.getElementById("form-email") as HTMLInputElement;
+  const formMsg = document.getElementById("form-msg") as HTMLTextAreaElement;
+
+  contactForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formNameValue = formName.value.trim();
+    const formEmailValue = formEmail.value.trim();
+    const formMsgValue = formMsg.value.trim();
+
+    errorMsg?.classList.add("hidden");
+    if (
+      formNameValue.length === 0 ||
+      formEmailValue.length === 0 ||
+      formMsgValue.length === 0
+    ) {
+      errorMsg?.classList.remove("hidden");
+      return;
+    }
+
+    const formData = new FormData(contactForm);
+
+    fetch(contactForm.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    }).then((response) => {
+      if (response.ok) {
+        contactForm.classList.add("hidden");
+        successMsg?.classList.remove("hidden");
+      }
+    });
+  });
+</script>
