@@ -91,9 +91,37 @@ export default function CartInteraction({ product }: { product: Product }) {
       </div>
 
       <div>
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3 block">
-          Seleccioná tu Talle:
-        </span>
+        <div className="flex justify-between items-baseline w-full mb-3">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+            Seleccioná tu Talle:
+          </span>
+          <button
+            type="button"
+            className="text-xs text-slate-300 hover:text-brand transition-colors font-medium flex items-center gap-1.5 cursor-pointer"
+            onClick={() => setIsModalOpen(true)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <title>Regla</title>
+              <path d="M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
+              <path d="M19 17v-4" />
+              <path d="M15 17v-2" />
+              <path d="M11 17v-4" />
+              <path d="M7 17v-2" />
+            </svg>
+            Abrir Guía de Talles
+          </button>
+        </div>
+
         <div className="flex gap-2 py-2">
           {product.sizes.map((size) => (
             <label key={size.name} className="cursor-pointer">
@@ -109,14 +137,6 @@ export default function CartInteraction({ product }: { product: Product }) {
             </label>
           ))}
         </div>
-
-        <button
-          type="button"
-          className="text-brand underline cursor-pointer mt-3 inline-block hover:text-orange-400 transition-colors"
-          onClick={() => setIsModalOpen(true)}
-        >
-          Abrir Guía de Talles
-        </button>
       </div>
 
       <button
