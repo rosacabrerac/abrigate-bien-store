@@ -5,10 +5,9 @@ import CartInteraction from "./CartInteraction";
 
 interface Props {
   product: Product;
-  wppUrl: string;
 }
 
-const { product, wppUrl } = Astro.props;
+const { product } = Astro.props;
 
 const formattedPrice = new Intl.NumberFormat("es-UY", {
   style: "currency",

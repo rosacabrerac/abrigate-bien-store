@@ -1,6 +1,5 @@
 ---
 import ProductDetailView from "../../components/ProductDetailView.astro";
-import { STORE_PHONE } from "../../constants";
 import { products } from "../../data/products";
 import Layout from "../../layouts/Layout.astro";
 
@@ -11,10 +10,6 @@ const product = products.find((prod) => prod.slug === slug);
 if (!product) {
   return Astro.redirect("/404");
 }
-
-const wppMessage = `Hola! Me interesa comprar ${product?.name}`;
-const encodedWppMessage = encodeURIComponent(wppMessage);
-const wppUrl = `https://wa.me/${STORE_PHONE}?text=${encodedWppMessage}`;
 
 export async function getStaticPaths() {
   return products.map((product) => ({
@@ -28,5 +23,5 @@ export async function getStaticPaths() {
   description={product.description}
   ogImage={product.image.src}
 >
-  <ProductDetailView product={product} wppUrl={wppUrl} />
+  <ProductDetailView product={product} />
 </Layout>
