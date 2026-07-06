@@ -81,10 +81,29 @@ const formattedPrice = new Intl.NumberFormat("es-UY", {
       </h1>
       <p class="text-2xl font-semibold text-white mt-3">{formattedPrice}</p>
 
-      <div class="border-t border-white/10 pt-6 mt-6">
-        <p class="text-sm text-slate-400 leading-relaxed mb-6">
-          {product.description}
+      <div class="border-t border-white/10 pt-6 mt-6 flex flex-col gap-4">
+        <p class="text-sm text-slate-400 leading-relaxed">
+          {product.description.split("\n\n")[0]}
         </p>
+
+        <div id="extra-info" class="hidden flex flex-col gap-4">
+          {
+            product.description
+              .split("\n\n")
+              .slice(1)
+              .map((paragraph) => (
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))
+          }
+        </div>
+
+        <button
+          id="toggle-btn"
+          class="text-xs font-bold uppercase tracking-wider text-brand hover:text-white transition-colors duration-200 self-start mt-2 focus:outline-none cursor-pointer"
+          >Ver más detalles</button
+        >
       </div>
 
       <div class="border-t border-white/10 pt-6 mt-6">
@@ -93,3 +112,21 @@ const formattedPrice = new Intl.NumberFormat("es-UY", {
     </div>
   </section>
 </div>
+
+<script>
+  const toggleBtn = document.getElementById("toggle-btn");
+  const extraInfo = document.getElementById("extra-info");
+
+  if (toggleBtn && extraInfo) {
+    toggleBtn.addEventListener("click", () => {
+      const isHidden = extraInfo.classList.contains("hidden");
+      if (isHidden) {
+        extraInfo.classList.remove("hidden");
+        toggleBtn.textContent = "Ver menos";
+      } else {
+        extraInfo.classList.add("hidden");
+        toggleBtn.textContent = "Ver más detalles";
+      }
+    });
+  }
+</script>
