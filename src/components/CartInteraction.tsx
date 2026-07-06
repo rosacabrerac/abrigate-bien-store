@@ -62,16 +62,13 @@ export default function CartInteraction({ product }: { product: Product }) {
 
   return (
     <div className="flex flex-col gap-4 py-2 w-full">
-      <span>
-        {new Intl.NumberFormat("es-UY", {
-          style: "currency",
-          currency: "UYU",
-          maximumFractionDigits: 0,
-        }).format(finalPrice)}
-      </span>
       <div>
-        <h2>Color:</h2>
-        <p>{selectedColor}</p>
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3 block">
+          Color:{" "}
+          <span className="text-white normal-case font-medium ml-1">
+            {selectedColor}
+          </span>
+        </span>
         <div className="flex gap-3 py-2">
           {product.colors.map((color) => (
             <label key={color.name} className="cursor-pointer">
@@ -85,7 +82,7 @@ export default function CartInteraction({ product }: { product: Product }) {
                 aria-label={`Color ${color.name}`}
               />
               <span
-                className={`w-6 h-6 inline-block rounded-full peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-400`}
+                className={`w-8 h-8 inline-block rounded-full border border-white/20 peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-400 peer-checked:ring-offset-[#07101d]`}
                 style={{ backgroundColor: color.hex }}
               ></span>
             </label>
@@ -94,7 +91,9 @@ export default function CartInteraction({ product }: { product: Product }) {
       </div>
 
       <div>
-        <h2>Seleccioná tu Talle:</h2>
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3 block">
+          Seleccioná tu Talle:
+        </span>
         <div className="flex gap-2 py-2">
           {product.sizes.map((size) => (
             <label key={size.name} className="cursor-pointer">
@@ -122,7 +121,7 @@ export default function CartInteraction({ product }: { product: Product }) {
 
       <button
         type="button"
-        className={`flex items-center justify-center gap-2 text-center cursor-pointer p-2 my-2 rounded-lg w-full max-w-sm text-slate-800 font-bold transition-colors duration-300 ${isAdded ? "bg-emerald-500" : "bg-orange-400"}`}
+        className={`text-white font-bold w-full py-4 rounded-xl transition-opacity mt-4 cursor-pointer ${isAdded ? "bg-emerald-500" : "bg-brand hover:opacity-90"}`}
         onClick={handleAddToCart}
         disabled={isAdded}
       >
