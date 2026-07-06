@@ -4,6 +4,7 @@ import CartDrawer from "../components/CartDrawer";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import ToastContainer from "../components/ToastContainer";
+import WhatsAppWidget from "../components/WhatsAppWidget.astro";
 
 interface Props {
   title?: string;
@@ -45,6 +46,7 @@ const {
       <slot />
     </main>
     <Footer />
+    <WhatsAppWidget />
   </body>
 </html>
 
