@@ -86,17 +86,19 @@ const formattedPrice = new Intl.NumberFormat("es-UY", {
           {product.description.split("\n\n")[0]}
         </p>
 
-        <div id="extra-info" class="hidden flex flex-col gap-4">
-          {
-            product.description
-              .split("\n\n")
-              .slice(1)
-              .map((paragraph) => (
-                <p class="text-sm text-slate-400 leading-relaxed">
-                  {paragraph}
-                </p>
-              ))
-          }
+        <div id="extra-info" class="hidden">
+          <div class="flex flex-col gap-4">
+            {
+              product.description
+                .split("\n\n")
+                .slice(1)
+                .map((paragraph) => (
+                  <p class="text-sm text-slate-400 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))
+            }
+          </div>
         </div>
 
         <button
