@@ -69,43 +69,48 @@ export default function SizeChartModal({
           </button>
         </div>
 
-        <table className="w-full border-collapse mt-6 text-left text-sm">
-          <thead>
-            <tr>
-              <th className="border-b border-white/10 pb-3 text-slate-300 font-semibold">
-                Talle
-              </th>
-              <th className="border-b border-white/10 pb-3 text-slate-300 font-semibold">
-                Pecho (cm)
-              </th>
-              <th className="border-b border-white/10 pb-3 text-slate-300 font-semibold">
-                Cintura (cm)
-              </th>
-              <th className="border-b border-white/10 pb-3 text-slate-300 font-semibold">
-                Cadera (cm)
-              </th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {SIZE_CHART.map((row) => (
-              <tr key={row.name} className="hover:bg-white/5 transition-colors">
-                <td className="py-3 border-b border-white/5 text-slate-400">
-                  {row.name}
-                </td>
-                <td className="py-3 border-b border-white/5 text-slate-400">
-                  {row.chest}
-                </td>
-                <td className="py-3 border-b border-white/5 text-slate-400">
-                  {row.waist}
-                </td>
-                <td className="py-3 border-b border-white/5 text-slate-400">
-                  {row.hip}
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[400px] border-collapse mt-6 text-left text-sm">
+            <thead>
+              <tr>
+                <th className="border-b border-white/10 pb-3 text-slate-300 font-semibold">
+                  Talle
+                </th>
+                <th className="border-b border-white/10 pb-3 text-slate-300 font-semibold">
+                  Pecho (cm)
+                </th>
+                <th className="border-b border-white/10 pb-3 text-slate-300 font-semibold">
+                  Cintura (cm)
+                </th>
+                <th className="border-b border-white/10 pb-3 text-slate-300 font-semibold">
+                  Cadera (cm)
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {SIZE_CHART.map((row) => (
+                <tr
+                  key={row.name}
+                  className="hover:bg-white/5 transition-colors"
+                >
+                  <td className="py-3 border-b border-white/5 text-slate-400">
+                    {row.name}
+                  </td>
+                  <td className="py-3 border-b border-white/5 text-slate-400">
+                    {row.chest}
+                  </td>
+                  <td className="py-3 border-b border-white/5 text-slate-400">
+                    {row.waist}
+                  </td>
+                  <td className="py-3 border-b border-white/5 text-slate-400">
+                    {row.hip}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         <div className="mt-6 pt-6 border-t border-white/10">
           <h3 className="text-xs font-semibold uppercase tracking-wider text-brand mb-3">

@@ -18,7 +18,7 @@ const formattedPrice = new Intl.NumberFormat("es-UY", {
 
 <div class="max-w-screen-xl mx-auto px-6 pt-24 pb-10 md:pt-32 md:pb-20">
   <nav
-    class="flex items-center gap-2 mb-8 font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500"
+    class="flex flex-wrap items-center gap-2 mb-8 font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500"
   >
     <a href="/" class="hover:text-brand transition-colors duration-200"
       >Inicio</a
@@ -59,7 +59,7 @@ const formattedPrice = new Intl.NumberFormat("es-UY", {
 
   <section class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
     <div
-      class="md:col-span-7 overflow-hidden border border-white/5 bg-white/[0.02]"
+      class="max-h-[60vh] md:max-h-none md:col-span-7 overflow-hidden border border-white/5 bg-white/[0.02]"
     >
       <Image
         src={product.image}
