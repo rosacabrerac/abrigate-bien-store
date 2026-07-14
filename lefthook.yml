@@ -9,12 +9,5 @@ pre-commit:
 post-merge:
   commands:
     build-deploy:
-      run: |
-        BRANCH=$(git branch --show-current)
-        if [ "$BRANCH" = "main" ]; then
-          echo "Actualización en main detectada. Compilando y desplegando a Netlify..."
-          pnpm run build && pnpm exec netlify deploy --prod --dir=dist
-        else
-          echo "Rama actual ($BRANCH) no es main. Se omite el deploy."
-        fi
+      run: node scripts/post-merge.js
 
