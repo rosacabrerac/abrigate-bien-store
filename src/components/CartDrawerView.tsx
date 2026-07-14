@@ -46,12 +46,11 @@ export default function CartDrawerView({
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="1.75"
-              aria-labelledby="title"
               className="icon icon-tabler icons-tabler-outline icon-tabler-x cursor-pointer"
               role="img"
               viewBox="0 0 24 24"
             >
-              <title>Borrar producto del carrito</title>
+              <title>Cerrar carrito</title>
               <path fill="none" stroke="none" d="M0 0h24v24H0z" />
               <path d="M18 6 6 18M6 6l12 12" />
             </svg>
@@ -76,7 +75,8 @@ export default function CartDrawerView({
 
                 <button
                   type="button"
-                  title="Close"
+                  title={`Quitar una unidad de ${item.name}`}
+                  aria-label={`Quitar una unidad de ${item.name}`}
                   onClick={() =>
                     onRemoveItem(`${item.id}-${item.size}-${item.color}`)
                   }
