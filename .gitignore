@@ -1,5 +1,6 @@
 # agent rules
 .agents
+.gga
 
 # build output
 dist/
