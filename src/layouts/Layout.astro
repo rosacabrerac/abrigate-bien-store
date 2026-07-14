@@ -48,8 +48,8 @@ const {
   </head>
   <body class="flex flex-col min-h-screen text-body bg-bg">
     <Navbar />
-    <CartDrawer client:load />
-    <ToastContainer client:load />
+    <CartDrawer client:idle />
+    <ToastContainer client:idle />
     <main class="flex-grow">
       <slot />
     </main>
